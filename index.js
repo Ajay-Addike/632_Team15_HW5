@@ -64,22 +64,22 @@ let array = [
     },
     {
         item: "Chilli mushroom",
-        imageUrl: "images/corn.jpeg",
+        imageUrl: "images/Chilli_mushroom.jpeg",
         cost: 25.00
     },
     {
         item: "Chicken pakodi",
-        imageUrl: "images/corn.jpeg",
+        imageUrl: "images/Chicken_pakoda.jpeg",
         cost: 33.00
     },
     {
         item: "Chilli paneer",
-        imageUrl: "images/corn.jpeg",
+        imageUrl: "images/Chilli_Paneer.jpeg",
         cost: 21.00
     },
     {
-        item: "Egg Friedrice",
-        imageUrl: "images/corn.jpeg",
+        item: "vanilla Ice cream",
+        imageUrl: "images/Vanilla.webp",
         cost: 26.00
     },
 
