@@ -81,21 +81,6 @@ let array = [
 
 let cartItemsArray = [];
 
-// Add an event listener to the "Order Now" button to navigate to the checkout page
-
-// orderNowButton.addEventListener("click", function() {
-//     const cartItemsJSON = JSON.stringify(cartItemsArray);
-//     localStorage.setItem("cartItems", cartItemsJSON);
-//     if(cartItemsArray.length>0)
-//     {
-//         window.location.href = "checkout.html";
-//     }
-//     else{
-
-//     }
-    
-// });
-
 var orderNow = function (id) {
     const cartItemsJSON = JSON.stringify(cartItemsArray);
     localStorage.setItem("cartItems", cartItemsJSON);
