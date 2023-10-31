@@ -17,12 +17,6 @@ let copystatusEle = document.getElementById("copystatus");
 let wholecart = document.getElementById("cart");
 const orderNowButton = document.getElementById("order-now-button");
 
-
-
-
-
-
-
 $ = function (id) {
     return document.getElementById(id);
 }
@@ -85,15 +79,9 @@ let array = [
 
 ];
 
-
-
-
 let cartItemsArray = [];
 
-
-
 // Add an event listener to the "Order Now" button to navigate to the checkout page
-
 
 orderNowButton.addEventListener("click", function() {
     const cartItemsJSON = JSON.stringify(cartItemsArray);
@@ -108,11 +96,6 @@ orderNowButton.addEventListener("click", function() {
     
 });
 
-
-
-
-
-
 function addItemToCartArray(obj) {
     let cartItem = cartItemsArray.forEach(element => {
         if (element.item == obj.item) {
@@ -124,14 +107,6 @@ function addItemToCartArray(obj) {
     if (!cartItem) {
         cartItem = { ...obj, count: 1 };
         cartItemsArray.push(cartItem);
-    }
-}
-
-function getCartItem(itemName) {
-    for (let item of cartItemsArray) {
-        if (item.item == itemName) {
-            return item;
-        }
     }
 }
 
@@ -294,96 +269,8 @@ function addtomenu(obj) {
         buttonEle2.textContent = inCartBtnText(cartDetails);
 
         }
-
-        
-
-
-
-        // for (let each of cartItemsArray) {
-        //     if (each.item === event.target.value) {
-        //         parsednumber++;
-        //         numberElement.textContent = parsednumber;
-
-        //     }
-        //     else {
-                    // let parsednumber = parseInt(numberElement.textContent);
-
-        //         // parsednumber++;
-        //         // numberElement.textContent = parsednumber;
-        //         // let parsedvalue = parseInt(totalEle.textContent);
-        //         // parsedvalue = parsedvalue + cost;
-        //         // totalEle.textContent = parsedvalue;
-        //         // let liElement = document.createElement("li");
-        //         // let imageELement = document.createElement("img");
-        //         // imageELement.src = imageUrl;
-        //         // imageELement.style.width = 60 + "px";
-        //         // imageELement.classList.add("round-image");
-        //         // let h5Element = document.createElement("h5");
-        //         // h5Element.textContent = item;
-        //         // h5Element.classList.add("h5-element");
-        //         // let paraElement = document.createElement("p");
-        //         // paraElement.textContent = cost;
-        //         // paraElement.classList.add("h5-element");
-
-        //         // let numberpara = document.createElement("p");
-        //         // let spanElement = document.createElement("span");
-        //         // spanElement.textContent = "$";
-        //         // numberpara.textContent = "1";
-        //         // numberpara.classList.add("h5-element");
-        //         // spanElement.classList.add("h5-element");
-
-        //         // addItemToCartArray(obj);
-
-        //         // let minusElement = document.createElement("button");
-        //         // minusElement.textContent = "-";
-        //         // minusElement.classList.add("signbutton")
-        //         // minusElement.addEventListener("click", function () {
-        //         //     count = parseInt(numberpara.textContent);
-        //         //     count--;
-        //         //     numberpara.textContent = count;
-        //         //     if (count <= 0) {
-        //         //         numberpara.textContent = "0";
-        //         //     }
-        //         //     if (count >= 0) {
-        //         //         let y = parseInt(totalEle.textContent);
-        //         //         y = y - cost;
-        //         //         totalEle.textContent = y;
-
-        //         //     }
-
-        //         // })
-        //         // let plusElement = document.createElement("button");
-        //         // plusElement.textContent = "+";
-        //         // plusElement.classList.add("signbutton");
-        //         // plusElement.addEventListener("click", function () {
-        //         //     count = parseInt(numberpara.textContent);
-        //         //     count++;
-        //         //     numberpara.textContent = count;
-        //         //     let x = parseInt(totalEle.textContent);
-        //         //     x = x + cost;
-        //         //     totalEle.textContent = x;
-
-        //         // })
-        //         // liElement.appendChild(imageELement);
-        //         // liElement.appendChild(h5Element);
-        //         // liElement.appendChild(spanElement);
-        //         // liElement.appendChild(paraElement);
-        //         // liElement.appendChild(minusElement);
-
-        //         // liElement.appendChild(numberpara);
-        //         // liElement.appendChild(plusElement);
-        //         // liElement.classList.add("d-flex", "flex-row", "mb-3");
-        //         // cartItemsEle.appendChild(liElement);
-
-        //         // cartDetails = getCartItem(obj.item);
-        //         // buttonEle2.textContent = inCartBtnText(cartDetails);
-
-        //     }
-        // }
-
     })
     imageEle.src = imageUrl;
-
 
     divelement1.classList.add("col-12", "col-md-6", "col-lg-3", "mb-3");
     divelement2.classList.add("explore-menu-card", "shadow", "mb-3");
@@ -404,19 +291,13 @@ for (let each of array) {
     addtomenu(each);
 }
 
-
-
-
-
-
 wholecart.addEventListener('click', () => {
     body.classList.add('active');
     openShopping.classList.add("none");
     quantity.classList.add("none");
     quantity1.classList.add("none");
-
-
 })
+
 closeShopping.addEventListener('click', () => {
     body.classList.remove('active');
     openShopping.classList.remove("none");
