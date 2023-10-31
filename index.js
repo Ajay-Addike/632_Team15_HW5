@@ -141,10 +141,10 @@ function addtomenu(obj) {
 
     let cartDetails = null;
 
-    let buttonEle2 = document.createElement("span");
-    buttonEle2.classList.add("btn", "ml-2", "bg-transprent");
+    let cartText = document.createElement("span");
+    cartText.classList.add("btn", "ml-2", "bg-transprent");
     cartDetails = getCartItem(obj.item);
-    buttonEle2.textContent = inCartBtnText(cartDetails);
+    cartText.textContent = inCartBtnText(cartDetails);
 
     buttonEle.addEventListener("click", function (event) {
         let parsednumber = parseInt(numberElement.textContent);
@@ -166,7 +166,7 @@ function addtomenu(obj) {
             cartDetails.count = count;
             cartDetails = getCartItem(obj.item);
             if (cartDetails) {
-                buttonEle2.textContent = inCartBtnText(cartDetails);
+                cartText.textContent = inCartBtnText(cartDetails);
             }
            
         
@@ -220,7 +220,7 @@ function addtomenu(obj) {
                 let y = parseInt(totalEle.textContent);
                 y = y - cost;
                 totalEle.textContent = y;
-                buttonEle2.textContent = inCartBtnText(getCartItem(item));
+                cartText.textContent = inCartBtnText(getCartItem(item));
 
             }
             let cartDetails = getCartItem(item);
@@ -245,7 +245,7 @@ function addtomenu(obj) {
             let parsednumber = parseInt(numberElement.textContent);
             parsednumber++;
             numberElement.textContent = parsednumber;
-            buttonEle2.textContent = inCartBtnText(getCartItem(item));
+            cartText.textContent = inCartBtnText(getCartItem(item));
             let cartDetails = getCartItem(item);
             if (cartDetails && cartDetails.count > 0) {
             
@@ -266,7 +266,7 @@ function addtomenu(obj) {
         cartItemsEle.appendChild(liElement);
 
         cartDetails = getCartItem(obj.item);
-        buttonEle2.textContent = inCartBtnText(cartDetails);
+        cartText.textContent = inCartBtnText(cartDetails);
 
         }
     })
@@ -278,7 +278,7 @@ function addtomenu(obj) {
     divelement2.appendChild(imageEle);
     divelement2.appendChild(headerEle);
     divelement2.appendChild(buttonEle);
-    divelement2.appendChild(buttonEle2);
+    divelement2.appendChild(cartText);
     divelement1.appendChild(divelement2);
     exp.appendChild(divelement1);
     function inCartBtnText(cartDetails) {
