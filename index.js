@@ -168,11 +168,6 @@ function addtomenu(obj) {
             if (cartDetails) {
                 cartText.textContent = inCartBtnText(cartDetails);
             }
-           
-        
-        
-
-
         }
         else{
         parsednumber++;
@@ -190,7 +185,8 @@ function addtomenu(obj) {
         let paraElement = document.createElement("p");
         paraElement.textContent = cost;
         paraElement.classList.add("h5-element");
-
+        
+        //count in cart
         let numberpara = document.createElement("p");
         let spanElement = document.createElement("span");
         spanElement.textContent = "$";
@@ -200,7 +196,8 @@ function addtomenu(obj) {
         spanElement.classList.add("spanele");
 
         addItemToCartArray(obj);
-
+        
+        //(-)Element
         let minusElement = document.createElement("button");
         minusElement.textContent = "-";
         minusElement.classList.add("signbutton" , "minus")
@@ -221,16 +218,17 @@ function addtomenu(obj) {
                 y = y - cost;
                 totalEle.textContent = y;
                 cartText.textContent = inCartBtnText(getCartItem(item));
-
             }
             let cartDetails = getCartItem(item);
+
         if (cartDetails && cartDetails.count > 0) {
             
             --cartDetails.count; // Decrease the count in the cart
-            
+            cartText.textContent = inCartBtnText(getCartItem(item));
         }
 
         })
+        //(+)Element
         let plusElement = document.createElement("button");
         plusElement.textContent = "+";
         plusElement.classList.add("signbutton");
