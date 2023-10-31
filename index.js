@@ -72,7 +72,7 @@ let array = [
         cost: 21.00
     },
     {
-        item: "vanilla Ice cream",
+        item: "Ice-cream",
         imageUrl: "images/Vanilla-Ice-Cream.webp",
         cost: 26.00
     },
