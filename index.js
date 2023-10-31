@@ -18,6 +18,11 @@ let wholecart = document.getElementById("cart");
 const orderNowButton = document.getElementById("order-now-button");
 
 
+
+
+
+
+
 $ = function (id) {
     return document.getElementById(id);
 }
@@ -59,30 +64,38 @@ let array = [
     },
     {
         item: "Chilli mushroom",
-        imageUrl: "images/Chilli_mushroom.jpeg",
+        imageUrl: "images/corn.jpeg",
         cost: 25.00
     },
     {
         item: "Chicken pakodi",
-        imageUrl: "images/Chicken_pakoda.jpeg",
+        imageUrl: "images/corn.jpeg",
         cost: 33.00
     },
     {
         item: "Chilli paneer",
-        imageUrl: "images/Chilli_Paneer.jpeg",
+        imageUrl: "images/corn.jpeg",
         cost: 21.00
     },
     {
-        item: "Vanilla Ice Cream",
-        imageUrl: "images/Vanilla.webp",
+        item: "Egg Friedrice",
+        imageUrl: "images/corn.jpeg",
         cost: 26.00
     },
 
 ];
 
+
+
+
 let cartItemsArray = [];
 
-var orderNow = function (id) {
+
+
+// Add an event listener to the "Order Now" button to navigate to the checkout page
+
+
+orderNowButton.addEventListener("click", function() {
     const cartItemsJSON = JSON.stringify(cartItemsArray);
     localStorage.setItem("cartItems", cartItemsJSON);
     if(cartItemsArray.length>0)
@@ -90,10 +103,15 @@ var orderNow = function (id) {
         window.location.href = "checkout.html";
     }
     else{
-        $(id).style.display = 'block';
-        document.body.style.overflow = "hidden";
+
     }
-}
+    
+});
+
+
+
+
+
 
 function addItemToCartArray(obj) {
     let cartItem = cartItemsArray.forEach(element => {
@@ -106,6 +124,14 @@ function addItemToCartArray(obj) {
     if (!cartItem) {
         cartItem = { ...obj, count: 1 };
         cartItemsArray.push(cartItem);
+    }
+}
+
+function getCartItem(itemName) {
+    for (let item of cartItemsArray) {
+        if (item.item == itemName) {
+            return item;
+        }
     }
 }
 
@@ -140,11 +166,10 @@ function addtomenu(obj) {
 
     let cartDetails = null;
 
-    let cartText = document.createElement("span");
-    cartText.classList.add("btn", "ml-2", "bg-transprent");
-    //span
+    let buttonEle2 = document.createElement("span");
+    buttonEle2.classList.add("btn", "ml-2", "bg-transprent");
     cartDetails = getCartItem(obj.item);
-    cartText.textContent = inCartBtnText(cartDetails);
+    buttonEle2.textContent = inCartBtnText(cartDetails);
 
     buttonEle.addEventListener("click", function (event) {
         let parsednumber = parseInt(numberElement.textContent);
@@ -166,7 +191,7 @@ function addtomenu(obj) {
             cartDetails.count = count;
             cartDetails = getCartItem(obj.item);
             if (cartDetails) {
-                cartText.textContent = inCartBtnText(cartDetails);
+                buttonEle2.textContent = inCartBtnText(cartDetails);
             }
            
         
@@ -220,7 +245,7 @@ function addtomenu(obj) {
                 let y = parseInt(totalEle.textContent);
                 y = y - cost;
                 totalEle.textContent = y;
-                cartText.textContent = inCartBtnText(getCartItem(item));
+                buttonEle2.textContent = inCartBtnText(getCartItem(item));
 
             }
             let cartDetails = getCartItem(item);
@@ -245,7 +270,7 @@ function addtomenu(obj) {
             let parsednumber = parseInt(numberElement.textContent);
             parsednumber++;
             numberElement.textContent = parsednumber;
-            cartText.textContent = inCartBtnText(getCartItem(item));
+            buttonEle2.textContent = inCartBtnText(getCartItem(item));
             let cartDetails = getCartItem(item);
             if (cartDetails && cartDetails.count > 0) {
             
@@ -266,7 +291,7 @@ function addtomenu(obj) {
         cartItemsEle.appendChild(liElement);
 
         cartDetails = getCartItem(obj.item);
-        cartText.textContent = inCartBtnText(cartDetails);
+        buttonEle2.textContent = inCartBtnText(cartDetails);
 
         }
 
@@ -366,7 +391,7 @@ function addtomenu(obj) {
     divelement2.appendChild(imageEle);
     divelement2.appendChild(headerEle);
     divelement2.appendChild(buttonEle);
-    divelement2.appendChild(cartText);
+    divelement2.appendChild(buttonEle2);
     divelement1.appendChild(divelement2);
     exp.appendChild(divelement1);
     function inCartBtnText(cartDetails) {
