@@ -219,7 +219,8 @@ function addtomenu(obj) {
                 totalEle.textContent = y;
                 cartText.textContent = inCartBtnText(getCartItem(item));
             }
-            let cartDetails = getCartItem(item);
+        
+        let cartDetails = getCartItem(item);
 
         if (cartDetails && cartDetails.count > 0) {
             
@@ -245,10 +246,10 @@ function addtomenu(obj) {
             numberElement.textContent = parsednumber;
             cartText.textContent = inCartBtnText(getCartItem(item));
             let cartDetails = getCartItem(item);
-            if (cartDetails && cartDetails.count > 0) {
+            if (cartDetails && cartDetails.count >= 0) {
             
-                cartDetails.count++; // Decrease the count in the cart
-                
+                cartDetails.count++; // Increase the count in the cart
+                cartText.textContent = inCartBtnText(getCartItem(item));
             }
 
         })
