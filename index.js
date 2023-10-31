@@ -49,37 +49,37 @@ function copyToClipboard(element) {
 let array = [
     {
         item: "Crispy Corn",
-        imageUrl: "images/corn.jpeg",
+        imageUrl: "images/cripsy_corn.jpeg",
         cost: 10.00
     },
     {
         item: "Chicken Curry",
-        imageUrl: "images/Chicken_Curry.jpeg",
+        imageUrl: "images/Chicken-Curry.webp",
         cost: 20.00
     },
     {
         item: "Chicken Biryani",
-        imageUrl: "images/Chicken_biryani.jpeg",
+        imageUrl: "images/cb.jpeg",
         cost: 30.00
     },
     {
         item: "Chilli mushroom",
-        imageUrl: "images/Chilli_mushroom.jpeg",
+        imageUrl: "images/cm.jpeg",
         cost: 25.00
     },
     {
         item: "Chicken pakodi",
-        imageUrl: "images/Chicken_pakoda.jpeg",
+        imageUrl: "images/cp.jpeg",
         cost: 33.00
     },
     {
         item: "Chilli paneer",
-        imageUrl: "images/Chilli_Paneer.jpeg",
+        imageUrl: "images/cpaneer.jpeg",
         cost: 21.00
     },
     {
         item: "vanilla Ice cream",
-        imageUrl: "images/Vanilla.webp",
+        imageUrl: "images/Vanilla-Ice-Cream.webp",
         cost: 26.00
     },
 
