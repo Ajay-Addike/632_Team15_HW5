@@ -83,7 +83,20 @@ let cartItemsArray = [];
 
 // Add an event listener to the "Order Now" button to navigate to the checkout page
 
-orderNowButton.addEventListener("click", function() {
+// orderNowButton.addEventListener("click", function() {
+//     const cartItemsJSON = JSON.stringify(cartItemsArray);
+//     localStorage.setItem("cartItems", cartItemsJSON);
+//     if(cartItemsArray.length>0)
+//     {
+//         window.location.href = "checkout.html";
+//     }
+//     else{
+
+//     }
+    
+// });
+
+var orderNow = function (id) {
     const cartItemsJSON = JSON.stringify(cartItemsArray);
     localStorage.setItem("cartItems", cartItemsJSON);
     if(cartItemsArray.length>0)
@@ -91,10 +104,10 @@ orderNowButton.addEventListener("click", function() {
         window.location.href = "checkout.html";
     }
     else{
-
+        $(id).style.display = 'block';
+        document.body.style.overflow = "hidden";
     }
-    
-});
+}
 
 function addItemToCartArray(obj) {
     let cartItem = cartItemsArray.forEach(element => {

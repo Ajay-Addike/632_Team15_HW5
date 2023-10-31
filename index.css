@@ -408,7 +408,7 @@ html{
     height: 100%;
 }
 
-.popup {
+.popup,.order-now-button-popup {
     /* background-color: #d0b200; */
     display: none;
     position: fixed;
@@ -443,7 +443,7 @@ html{
     text-align: center;
     /* border: 3px solid #F04A49; */
   }
-  #popup:after {
+  #popup:after,#order-now-button-popup:after {
     position: fixed;
     content: "";
     top: 0;
@@ -454,7 +454,7 @@ html{
     z-index: -2;
   }
   
-  #popup:before {
+  #popup:before,#order-now-button-popup:before {
     position: absolute;
     content: "";
     top: 0;
